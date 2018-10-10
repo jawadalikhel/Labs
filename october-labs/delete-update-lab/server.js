@@ -7,7 +7,11 @@ app.get('/', (req, res) =>{
 	res.send('hey hey hey working hard');
 })
 
-
+app.get('/people', (req, res) =>{
+	res.render('index.ejs',{
+		pep: People
+	})
+})
 
 
 
