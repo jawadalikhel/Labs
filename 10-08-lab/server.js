@@ -1,15 +1,17 @@
 const express = require('express');
-
 const app = express();
 
+const greeting = 'Hello you ';
 
-let greeting = 'Hello stranger';
+app.get('/greeting', (request, response) =>{
+	response.send(greeting);
+});
 
-app.get('/greeting/', (req, res) =>{
-	res.send(greeting);
+app.get('/greeting/:name', (request, response) =>{
+	response.send(greeting + request.params.name);
 })
 
 
 app.listen(3000, () =>{
-	console.log('port 3000');
+	console.log('I am listening');
 })
